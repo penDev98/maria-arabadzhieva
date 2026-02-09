@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Golos+Text:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Golos+Text:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,19 +11,32 @@
   --paper-white: #FAFAFA;
 }
 
+.bg-dot-pattern {
+  background-image: radial-gradient(#0F0F0F 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Golos Text', sans-serif;
-  background: var(--void-black);
+  background-color: var(--paper-white);
   color: var(--void-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  border: 20px solid var(--void-black);
+  /* Brutalist Frame */
+  min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Unbounded', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
@@ -55,10 +68,21 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(8px);
   }
 
-  .animate-reveal-line-1 { animation-delay: 0ms; }
-  .animate-reveal-line-2 { animation-delay: 80ms; }
-  .animate-reveal-line-3 { animation-delay: 160ms; }
-  .animate-reveal-line-4 { animation-delay: 240ms; }
+  .animate-reveal-line-1 {
+    animation-delay: 0ms;
+  }
+
+  .animate-reveal-line-2 {
+    animation-delay: 80ms;
+  }
+
+  .animate-reveal-line-3 {
+    animation-delay: 160ms;
+  }
+
+  .animate-reveal-line-4 {
+    animation-delay: 240ms;
+  }
 
   @keyframes revealLine {
     to {
@@ -71,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: translateY(6px);
     transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .scroll-reveal.visible {
@@ -80,12 +104,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   @media (prefers-reduced-motion: reduce) {
+
     .animate-reveal-line,
     .scroll-reveal {
       animation: none;
       opacity: 1;
       transform: none;
       transition: none;
+    }
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
     }
   }
 }

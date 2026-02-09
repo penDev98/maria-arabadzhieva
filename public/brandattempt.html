@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REAL SOCIAL BROKER // BRAND BOOK</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* COLOR PALETTE */
+            --hype-red: #FF3300;
+            --acid-yellow: #EBFF00;
+            --void-black: #0F0F0F;
+            --paper-white: #FAFAFA;
+            
+            /* TYPOGRAPHY */
+            --font-head: 'Unbounded', sans-serif;
+            --font-body: 'Golos Text', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--paper-white);
+            color: var(--void-black);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+            border: 20px solid var(--void-black); /* Brutalist Frame */
+            min-height: 100vh;
+        }
+
+        /* --- 1. MARQUEE SCROLL (TOP) --- */
+        .marquee-container {
+            background: var(--hype-red);
+            color: var(--paper-white);
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+            border-bottom: 4px solid var(--void-black);
+            font-family: var(--font-head);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: scroll-left 10s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- 2. HERO SECTION --- */
+        .hero {
+            padding: 80px 40px;
+            border-bottom: 4px solid var(--void-black);
+            position: relative;
+        }
+
+        h1 {
+            font-family: var(--font-head);
+            font-size: 8vw;
+            line-height: 0.9;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight {
+            background-color: var(--acid-yellow);
+            padding: 0 10px;
+            display: inline-block;
+            transform: skewX(-10deg);
+        }
+
+        .sub-hero {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
+        /* STICKER ELEMENT */
+        .sticker {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            background: var(--void-black);
+            color: var(--paper-white);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: var(--font-head);
+            font-weight: 700;
+            transform: rotate(15deg);
+            animation: float 3s ease-in-out infinite;
+            box-shadow: 10px 10px 0px var(--hype-red);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(15deg) translateY(0); }
+            50% { transform: rotate(10deg) translateY(-20px); }
+        }
+
+        /* --- 3. COLOR PALETTE GRID --- */
+        .section-title {
+            font-family: var(--font-head);
+            font-size: 3rem;
+            padding: 40px;
+            border-bottom: 4px solid var(--void-black);
+            background: var(--void-black);
+            color: var(--acid-yellow);
+        }
+
+        .grid-colors {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            border-bottom: 4px solid var(--void-black);
+        }
+
+        .color-card {
+            height: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 4px solid var(--void-black);
+            font-family: var(--font-head);
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .color-card:hover {
+            transform: scale(0.95);
+        }
+
+        .c-red { background: var(--hype-red); color: var(--paper-white); }
+        .c-yellow { background: var(--acid-yellow); color: var(--void-black); }
+        .c-black { background: var(--void-black); color: var(--paper-white); }
+        .c-white { background: var(--paper-white); color: var(--void-black); }
+
+        /* --- 4. TYPOGRAPHY SHOWCASE --- */
+        .typography-section {
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            border-bottom: 4px solid var(--void-black);
+        }
+
+        .type-demo h2 {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--hype-red);
+        }
+
+        .font-preview {
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 20px;
+            word-break: break-all;
+        }
+
+        .bg-text {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        /* --- 5. UI ELEMENTS & BUTTONS --- */
+        .ui-section {
+            padding: 80px 40px;
+            background-image: radial-gradient(var(--void-black) 1px, transparent 1px);
+            background-size: 20px 20px; /* Dot pattern background */
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* THE PRIMARY BUTTON */
+        .btn-primary {
+            background: var(--void-black);
+            color: var(--paper-white);
+            border: none;
+            padding: 20px 60px;
+            font-family: var(--font-head);
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+            box-shadow: 10px 10px 0px var(--acid-yellow);
+        }
+
+        .btn-primary:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0px var(--hype-red);
+            background: var(--paper-white);
+            color: var(--void-black);
+        }
+
+        .btn-primary:active {
+            transform: translate(5px, 5px);
+            box-shadow: 0px 0px 0px;
+        }
+
+        /* THE OUTLINE BUTTON */
+        .btn-outline {
+            background: transparent;
+            color: var(--void-black);
+            border: 4px solid var(--void-black);
+            padding: 20px 60px;
+            font-family: var(--font-head);
+            font-weight: 700;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--hype-red);
+            color: var(--paper-white);
+            border-color: var(--hype-red);
+            transform: rotate(-3deg);
+        }
+
+        /* --- 6. FOOTER --- */
+        footer {
+            background: var(--void-black);
+            color: var(--paper-white);
+            padding: 60px 40px;
+            text-align: center;
+            font-family: var(--font-head);
+        }
+
+        .footer-logo {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--acid-yellow);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-logo:hover {
+            animation: shake 0.5s;
+            cursor: help;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+
+        /* MOBILE FIXES */
+        @media (max-width: 768px) {
+            h1 { font-size: 14vw; }
+            .typography-section { grid-template-columns: 1fr; }
+            body { border-width: 10px; }
+            .sticker { width: 100px; height: 100px; font-size: 0.8rem; top: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            REAL SOCIAL BROKER /// НЕ ПРОСТО БРОКЕР /// DIGITAL ROCKSTAR /// REAL SOCIAL BROKER /// НЕ ПРОСТО БРОКЕР /// DIGITAL ROCKSTAR /// 
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="sticker">BRAND<br>V 1.0</div>
+        <h1>
+            REAL<br>
+            <span class="highlight">SOCIAL</span><br>
+            BROKER
+        </h1>
+        <p class="sub-hero">
+            <strong>IDENTITY SYSTEM:</strong> Playful. Brutalist. Loud.<br>
+            Designed for Mariya Arabadzhieva to dominate the Bulgarian Real Estate market.
+        </p>
+    </section>
+
+    <div class="section-title">01. COLORS</div>
+    <section class="grid-colors">
+        <div class="color-card c-red">
+            <span>HYPE RED</span>
+            <span>#FF3300</span>
+        </div>
+        <div class="color-card c-yellow">
+            <span>ACID SMILE</span>
+            <span>#EBFF00</span>
+        </div>
+        <div class="color-card c-black">
+            <span>VOID BLACK</span>
+            <span>#0F0F0F</span>
+        </div>
+        <div class="color-card c-white">
+            <span>PAPER WHITE</span>
+            <span>#FAFAFA</span>
+        </div>
+    </section>
+
+    <div class="section-title">02. FONTS</div>
+    <section class="typography-section">
+        <div class="type-demo">
+            <h2>HEADLINES</h2>
+            <p style="margin-bottom: 10px;">Font: <strong>Unbounded</strong></p>
+            <div class="font-preview" style="font-family: var(--font-head); font-weight: 900;">
+                АБВГД<br>ИМОТИ
+            </div>
+            <p class="bg-text">Designed for impact. Use mostly in Uppercase. Great for numbers and short, punchy statements.</p>
+        </div>
+
+        <div class="type-demo">
+            <h2>BODY COPY</h2>
+            <p style="margin-bottom: 10px;">Font: <strong>Golos Text</strong></p>
+            <div class="font-preview" style="font-family: var(--font-body); font-weight: 400;">
+                а б в г д ж з<br>
+                здравей.
+            </div>
+            <p class="bg-text">Clean, modern, and readable. Note the specialized Bulgarian Cyrillic forms (lowercase g, k, l).</p>
+        </div>
+    </section>
+
+    <div class="section-title">03. UI & BUTTONS</div>
+    <section class="ui-section">
+        <div class="btn-container">
+            <button class="btn-primary">ДАВАЙ!</button>
+            <button class="btn-outline">СВЪРЖИ СЕ</button>
+        </div>
+        <br><br>
+        <p style="font-family: var(--font-body); max-width: 500px; background: white; padding: 20px; border: 2px solid black;">
+            <strong>INTERACTION NOTE:</strong> Buttons should feel "heavy" and tactile. 
+            On hover, elements should snap, rotate, or invert colors instantly. No soft fades.
+        </p>
+    </section>
+
+    <footer>
+        <div class="footer-logo">RSB</div>
+        <p>REAL SOCIAL BROKER © 2024</p>
+        <p style="opacity: 0.5; margin-top: 10px; font-size: 0.8rem;">MADE FOR THE BOLD.</p>
+    </footer>
+
+</body>
+</html>

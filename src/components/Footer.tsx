@@ -9,36 +9,48 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F0F0F] border-t-2 border-[#FAFAFA]/10 py-10 sm:py-12 px-6 lg:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
-        <div className="text-center sm:text-left">
-          <p
-            className="text-lg font-black text-[#FAFAFA] uppercase tracking-tight"
-            style={{ fontFamily: 'Unbounded, sans-serif' }}
-          >
-            Real Social Broker
-          </p>
-          <p className="text-sm font-medium text-[#FAFAFA] opacity-50 mt-1">
-            Мария Арабаджиева
-          </p>
+    <footer className="bg-void-black text-paper-white py-16 px-6 lg:px-12 text-center border-t-4 border-void-black font-head">
+      <div className="max-w-7xl mx-auto flex flex-col items-center gap-8">
+        <div className="inline-block hover:animate-[shake_0.5s] cursor-help">
+          <h2 className="text-4xl lg:text-6xl font-black text-acid-yellow mb-4">RSB</h2>
         </div>
 
-        <div className="flex gap-4">
+        <p className="text-xl font-bold uppercase tracking-tight text-paper-white">
+          REAL SOCIAL BROKER © 2026
+        </p>
+
+        <div className="flex gap-6">
           {SOCIALS.map((s, idx) => (
             <a
               key={idx}
               href={s.href}
-              className="w-10 h-10 bg-transparent border-2 border-[#FAFAFA]/20 flex items-center justify-center hover:border-[#FF3300] hover:bg-[#FF3300] transition-all duration-200"
+              className="w-12 h-12 bg-void-black border-2 border-paper-white flex items-center justify-center hover:bg-hype-red hover:border-hype-red hover:-rotate-6 transition-all duration-200"
             >
-              <s.icon size={18} className="text-[#FAFAFA]" strokeWidth={2.5} />
+              <s.icon size={24} className="text-paper-white" strokeWidth={2.5} />
             </a>
           ))}
         </div>
 
-        <p className="text-xs font-medium text-[#FAFAFA] opacity-40">
-          &copy; 2026 Real Social Broker
+        <p className="text-sm font-medium text-paper-white opacity-50 uppercase tracking-widest mt-8">
+          MADE FOR THE BOLD.
         </p>
       </div>
+
+      <style>{`
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+      `}</style>
     </footer>
   );
 }

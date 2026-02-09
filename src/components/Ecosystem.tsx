@@ -5,33 +5,37 @@ const PLATFORMS = [
     icon: Youtube,
     name: 'YouTube',
     desc: 'Broker Blitz — реални разговори с брокери',
-    accent: '#FF3300',
+    accent: 'text-hype-red',
+    accentBg: 'bg-hype-red',
   },
   {
     icon: Instagram,
     name: 'Instagram',
     desc: 'Кратко. Директно. Без филтри.',
-    accent: '#EBFF00',
+    accent: 'text-acid-yellow',
+    accentBg: 'bg-acid-yellow',
   },
   {
     icon: Facebook,
     name: 'Facebook',
     desc: 'Анализи и позиции за пазара',
-    accent: '#FF3300',
+    accent: 'text-hype-red',
+    accentBg: 'bg-hype-red',
   },
   {
     icon: Music,
     name: 'TikTok',
     desc: 'Кратки истини за недвижимите имоти',
-    accent: '#EBFF00',
+    accent: 'text-acid-yellow',
+    accentBg: 'bg-acid-yellow',
   },
 ];
 
 export default function Ecosystem() {
   return (
-    <section id="съдържание" className="bg-[#0F0F0F] py-24 sm:py-32 lg:py-40">
+    <section id="съдържание" className="bg-void-black py-24 sm:py-32 lg:py-40 border-b-4 border-void-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-16 sm:mb-20 text-[#FAFAFA] text-center">
+        <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-16 sm:mb-20 text-paper-white text-center font-head">
           НАВСЯКЪДЕ.
         </h2>
 
@@ -40,42 +44,40 @@ export default function Ecosystem() {
             <a
               key={idx}
               href="#"
-              className="group relative bg-[#0F0F0F] border-2 border-[#FAFAFA]/20 p-8 sm:p-10 flex flex-col items-start gap-6 hover:border-[#FF3300] transition-all duration-200 ease-out lg:hover:translate-y-[-4px] active:scale-[0.98]"
+              className="group relative bg-void-black border-2 border-paper-white/20 p-8 sm:p-10 flex flex-col items-start gap-6 hover:border-hype-red transition-all duration-200 ease-out lg:hover:translate-y-[-4px] active:scale-[0.98] hover:bg-paper-white/5"
             >
               <p.icon
                 size={48}
                 strokeWidth={2.5}
-                style={{ color: p.accent }}
-                className="transition-transform duration-200 lg:group-hover:scale-110"
+                className={`transition-transform duration-200 lg:group-hover:scale-110 ${p.accent}`}
               />
               <div>
-                <span className="block text-xl font-black text-[#FAFAFA] uppercase mb-2">
+                <span className="block text-xl font-black text-paper-white uppercase mb-2 font-head">
                   {p.name}
                 </span>
-                <span className="block text-sm font-medium text-[#FAFAFA] opacity-70 leading-snug">
+                <span className="block text-sm font-medium text-paper-white opacity-70 leading-snug font-body">
                   {p.desc}
                 </span>
               </div>
               <div
-                className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-200 ease-out"
-                style={{ backgroundColor: p.accent }}
+                className={`absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-200 ease-out ${p.accentBg}`}
               />
             </a>
           ))}
         </div>
 
-        <div className="border-2 border-[#EBFF00] p-10 sm:p-14 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="border-4 border-acid-yellow p-10 sm:p-14 flex flex-col sm:flex-row items-center justify-between gap-6 hover:bg-void-black/50 transition-colors">
           <div>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#EBFF00] mb-2">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-acid-yellow mb-2 font-head">
               BROKER BLITZ
             </h3>
-            <p className="text-base sm:text-lg text-[#FAFAFA] font-medium opacity-80">
+            <p className="text-base sm:text-lg text-paper-white font-medium opacity-80 font-body">
               Седмични прозрения. Без филтри. Чиста стойност.
             </p>
           </div>
           <a
             href="#"
-            className="shrink-0 px-8 py-4 bg-[#EBFF00] text-[#0F0F0F] font-bold text-sm uppercase tracking-tight border-2 border-[#EBFF00] hover:bg-transparent hover:text-[#EBFF00] transition-all duration-150 ease-out active:scale-[0.98]"
+            className="shrink-0 px-8 py-4 bg-acid-yellow text-void-black font-bold text-sm uppercase tracking-tight border-4 border-acid-yellow hover:bg-transparent hover:text-acid-yellow transition-all duration-150 ease-out active:scale-[0.98] font-head"
           >
             Гледай сега
           </a>

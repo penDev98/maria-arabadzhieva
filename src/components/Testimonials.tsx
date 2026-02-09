@@ -24,17 +24,17 @@ function TestimonialCard({ testimonial, delay }: { testimonial: typeof TESTIMONI
   return (
     <div
       ref={ref}
-      className={`scroll-reveal ${isVisible ? 'visible' : ''} bg-[#0F0F0F] border-l-4 border-[#FF3300] p-8 sm:p-10 flex flex-col justify-between transition-all duration-200 lg:hover:translate-y-[-4px] lg:hover:border-[#EBFF00]`}
+      className={`scroll-reveal ${isVisible ? 'visible' : ''} bg-void-black border-l-4 border-hype-red p-8 sm:p-10 flex flex-col justify-between transition-all duration-200 lg:hover:translate-y-[-4px] lg:hover:border-acid-yellow shadow-[10px_10px_0px_#EBFF00]`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <p className="text-lg sm:text-xl font-medium text-[#FAFAFA] leading-relaxed mb-8">
+      <p className="text-lg sm:text-xl font-medium text-paper-white leading-relaxed mb-8 font-body">
         &ldquo;{testimonial.quote}&rdquo;
       </p>
       <div>
-        <p className="text-[#EBFF00] font-bold text-base uppercase tracking-tight">
+        <p className="text-acid-yellow font-bold text-base uppercase tracking-tight font-head">
           {testimonial.name}
         </p>
-        <p className="text-[#FAFAFA] opacity-60 text-sm font-medium">
+        <p className="text-paper-white opacity-60 text-sm font-medium font-body">
           {testimonial.role}
         </p>
       </div>
@@ -44,10 +44,10 @@ function TestimonialCard({ testimonial, delay }: { testimonial: typeof TESTIMONI
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#FAFAFA] py-24 sm:py-32 lg:py-40">
+    <section className="bg-paper-white py-24 sm:py-32 lg:py-40 border-b-4 border-void-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F0F0F] mb-16 sm:mb-20 text-center">
-          ОТЗИВИ
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-void-black mb-16 sm:mb-20 text-center font-head uppercase">
+          Отзиви
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

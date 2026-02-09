@@ -6,10 +6,14 @@ import Ecosystem from './components/Ecosystem';
 import Services from './components/Services';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
+import Marquee from './components/Marquee';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0F0F0F]">
+    <div className="min-h-screen">
+      <Marquee repeat={15}>
+        REAL SOCIAL BROKER /// НЕ ПРОСТО БРОКЕР /// DIGITAL ROCKSTAR ///
+      </Marquee>
       <Navigation />
       <Hero />
       <Beliefs />

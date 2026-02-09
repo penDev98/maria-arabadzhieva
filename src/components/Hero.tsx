@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
+import Button from './ui/Button';
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -36,10 +37,15 @@ export default function Hero() {
     <section
       id="начало"
       ref={containerRef}
-      className="relative min-h-screen bg-[#0F0F0F] flex flex-col lg:flex-row items-center justify-center px-6 lg:px-12 pt-32 pb-16 lg:pt-0 lg:pb-0 gap-10 lg:gap-20 overflow-hidden"
+      className="relative min-h-[85vh] bg-paper-white flex flex-col lg:flex-row items-center justify-center px-6 lg:px-12 py-12 lg:py-0 gap-10 lg:gap-20 overflow-hidden border-b-4 border-void-black"
     >
-      <div className="w-full lg:w-auto flex justify-center order-1 lg:order-1 lg:mt-16">
-        <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-[9/16] bg-[#0F0F0F] border-4 border-[#FF3300] overflow-hidden group">
+      {/* STICKER ELEMENT */}
+      <div className="absolute top-10 right-10 lg:top-[50px] lg:right-[50px] bg-void-black text-paper-white w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full flex items-center justify-center text-center font-head font-bold text-sm lg:text-base rotate-[15deg] animate-[float_3s_ease-in-out_infinite] shadow-[10px_10px_0px_#FF3300] z-20">
+        BRAND<br />V 1.0
+      </div>
+
+      <div className="w-full lg:w-auto flex justify-center order-1 lg:order-1 lg:mt-16 relative z-10">
+        <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-[9/16] bg-void-black border-4 border-void-black overflow-hidden group shadow-[10px_10px_0px_#EBFF00]">
           <video
             ref={videoRef}
             className="w-full h-full object-cover transition-transform duration-300 ease-out lg:group-hover:scale-[1.01]"
@@ -55,18 +61,18 @@ export default function Hero() {
 
           <button
             onClick={toggleSound}
-            className="absolute bottom-4 right-4 z-10 flex items-center gap-2 px-4 py-2 bg-[#0F0F0F] border-2 border-[#FAFAFA] text-[#FAFAFA] text-sm font-bold uppercase tracking-tight hover:bg-[#FF3300] hover:border-[#FF3300] transition-all duration-150 ease-out active:scale-[0.98]"
+            className="absolute bottom-4 right-4 z-10 flex items-center gap-2 px-4 py-2 bg-void-black border-2 border-paper-white text-paper-white text-sm font-bold uppercase tracking-tight hover:bg-hype-red hover:border-hype-red transition-all duration-150 ease-out active:scale-[0.98]"
           >
             {muted ? (
               <>
                 <VolumeX size={18} strokeWidth={2.5} />
-                <span className="hidden sm:inline">Пусни със звук</span>
+                <span className="hidden sm:inline">Без звук</span>
                 <span className="sm:hidden">Звук</span>
               </>
             ) : (
               <>
                 <Volume2 size={18} strokeWidth={2.5} />
-                <span className="hidden sm:inline">Без звук</span>
+                <span className="hidden sm:inline">Пусни</span>
                 <span className="sm:hidden">Тихо</span>
               </>
             )}
@@ -75,26 +81,22 @@ export default function Hero() {
       </div>
 
       <div
-        className="max-w-2xl order-2 lg:order-2 text-center lg:text-left"
+        className="max-w-4xl order-2 lg:order-2 text-center lg:text-left z-10"
         style={{ transform: `translateY(${parallaxY}px)` }}
       >
-        <h1 className="text-3xl sm:text-4xl lg:text-6xl xl:text-7xl font-black leading-[1.05] mb-8 text-[#FAFAFA]">
-          <span className="inline-block animate-reveal-line animate-reveal-line-1">
-            <span className="text-[#FF3300]">ГЛАСЪТ</span> НА{' '}
-          </span>
-          <span className="block animate-reveal-line animate-reveal-line-2">МОДЕРНИТЕ</span>
-          <span className="block animate-reveal-line animate-reveal-line-3">НЕДВИЖИМИ ИМОТИ</span>
-          <span className="block animate-reveal-line animate-reveal-line-4">ВЪВ ВАРНА.</span>
+        <h1 className="font-head text-[14vw] lg:text-[8vw] leading-[0.9] uppercase font-black tracking-tighter mb-8 text-void-black">
+          REAL<br />
+          <span className="bg-acid-yellow px-2 inline-block -skew-x-[10deg]">SOCIAL</span><br />
+          BROKER
         </h1>
-        <p className="text-lg sm:text-xl lg:text-2xl mb-10 font-medium text-[#FAFAFA] opacity-90 leading-relaxed max-w-xl mx-auto lg:mx-0">
+        <p className="text-lg sm:text-xl lg:text-2xl mb-10 font-medium text-void-black leading-relaxed max-w-xl mx-auto lg:mx-0 font-body">
           Изграждам авторитет чрез лично брандиране, съдържание и честни разговори.
         </p>
-        <a
-          href="#контакт"
-          className="inline-block px-10 py-5 sm:px-12 sm:py-6 bg-[#EBFF00] text-[#0F0F0F] font-black text-base sm:text-lg uppercase tracking-tight border-4 border-[#EBFF00] hover:bg-transparent hover:text-[#EBFF00] transition-all duration-150 ease-out active:scale-[0.98]"
-        >
-          Запази консултация с мен
-        </a>
+
+        <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+          <Button variant="primary">Давай!</Button>
+          <Button variant="outline">Свържи се</Button>
+        </div>
       </div>
     </section>
   );
