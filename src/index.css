@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700;800;900&family=Golos+Text:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --hype-red: #FF3300;
+  --acid-yellow: #EBFF00;
+  --void-black: #0F0F0F;
+  --paper-white: #FAFAFA;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Golos Text', sans-serif;
+  background: var(--void-black);
+  color: var(--void-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Unbounded', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+::selection {
+  background: var(--hype-red);
+  color: var(--paper-white);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--void-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--hype-red);
+}
+
+@layer utilities {
+  .animate-reveal-line {
+    animation: revealLine 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .animate-reveal-line-1 { animation-delay: 0ms; }
+  .animate-reveal-line-2 { animation-delay: 80ms; }
+  .animate-reveal-line-3 { animation-delay: 160ms; }
+  .animate-reveal-line-4 { animation-delay: 240ms; }
+
+  @keyframes revealLine {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-reveal-line,
+    .scroll-reveal {
+      animation: none;
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
