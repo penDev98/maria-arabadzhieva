@@ -37,14 +37,14 @@ export default function Hero() {
     <section
       id="начало"
       ref={containerRef}
-      className="relative min-h-[85vh] bg-paper-white flex flex-col lg:flex-row items-center justify-center px-6 lg:px-12 py-12 lg:py-0 gap-10 lg:gap-20 overflow-hidden border-b-4 border-void-black"
+      className="relative min-h-[85vh] bg-paper-white flex flex-col lg:flex-row items-center justify-center px-6 lg:px-12 pt-10 pb-10 lg:pt-0 lg:pb-16 gap-0 lg:gap-20 overflow-hidden border-b-4 border-void-black"
     >
       {/* STICKER ELEMENT */}
       <div className="absolute top-10 right-10 lg:top-[50px] lg:right-[50px] bg-void-black text-paper-white w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] rounded-full flex items-center justify-center text-center font-head font-bold text-sm lg:text-base rotate-[15deg] animate-[float_3s_ease-in-out_infinite] shadow-[10px_10px_0px_#FF3300] z-20">
         BRAND<br />V 1.0
       </div>
 
-      <div className="w-full lg:w-auto flex justify-center order-1 lg:order-1 lg:mt-16 relative z-10">
+      <div className="w-full lg:w-auto flex justify-center order-1 lg:order-1 lg:mt-16 relative z-10 mb-8 lg:mb-0">
         <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] aspect-[9/16] bg-void-black border-4 border-void-black overflow-hidden group shadow-[10px_10px_0px_#EBFF00]">
           <video
             ref={videoRef}
